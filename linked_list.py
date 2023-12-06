@@ -119,6 +119,22 @@ class LinkedList:
             
         return current
     
+    def node_at_index(self, index):
+        """
+        Returns node at a given index
+        """
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            position = 0
+
+            while position < index:
+                current = current.next_node
+                position += 1
+            
+            return current
+    
     def __repr__(self):
         """Returns string representation of the list
 
@@ -139,18 +155,18 @@ class LinkedList:
             current = current.next_node
         return '-> '.join(nodes)
 
-l = LinkedList()
-l.add(1)
-l.add(2)
-l.add(3)
-l.add(10)
-l.add(45)
-l.add(15)
-print(l.size())
-print(l)
-n = l.search(45)
-print(n)
+# l = LinkedList()
+# l.add(1)
+# l.add(2)
+# l.add(3)
+# l.add(10)
+# l.add(45)
+# l.add(15)
+# print(l.size())
+# print(l)
+# n = l.search(45)
+# print(n)
 
-l.insert(101, 3)
-print("101 should inserted at index 3")
-print(l)
+# l.insert(101, 3)
+# print("101 should inserted at index 3")
+# print(l)
